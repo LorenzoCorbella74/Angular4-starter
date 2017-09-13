@@ -1,3 +1,47 @@
-<div class="row">
-    <h3 class="page-header">{{message}}</h3>
+<div class="container">
+    
+    <div class="row">
+        <h2 class="page-header"><i class="fa fa-code"></i> Angular 4 starter</h2>
+    </div>
+    <div class="row">
+        <h4 class="page-header">{{message}} & <a href="https://github.com/ng-bootstrap/ng-bootstrap">ng-bootstrap</a></h4>
+    </div>
+    <hr>
+    <div class="row">
+        <!-- EXAMPLE NG-BOOTSTRAP -->
+        <!-- BUTTONS -->
+        <div class="col-md-9">
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
+                </label>
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
+                </label>
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
+                </label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <pre>{{model | json}}</pre>
+        </div>
+    </div>
+    <!-- DATEPICKER -->
+    <div class="row">
+        <div class="col-md-9">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model.date" ngbDatepicker #d="ngbDatepicker">
+                        <button class="input-group-addon" (click)="d.toggle()" type="button">
+                          <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- MODALS -->
+    <ngbd-modal-basic></ngbd-modal-basic>
 </div>
